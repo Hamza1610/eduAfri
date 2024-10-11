@@ -13,20 +13,7 @@ const { connectToMongoDB } = require('./models/connection');
 
 var app = express();
 
-// connectToMongoDB()
-const mongoose = require('mongoose');
-const { config } = require('dotenv');
 
-if (process.env.MONGODB_KEY) {
-
-  mongoose.connect(process.env.MONGODB_KEY, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true
-    }).then(() => console.log('MongoDB connected'))
-      .catch(err => console.log(err))   
-} else {
-  console.log('No MONGODB KEY FOUND PLEAS ADD IT TO YOUR PATH VARIABLE, USING "MONGODB_KEY"');
-}
 
 
 // view engine setup
