@@ -59,3 +59,63 @@ To run this project, you will need to have the following installed:
    ```bash
    git clone https://github.com/yourusername/eduafri-api.git
    cd eduafri-api
+
+
+
+
+# API Endpoints
+
+## Courses
+
+| Method | Endpoint          | Description                      |
+|--------|-------------------|----------------------------------|
+| GET    | /api/courses       | Retrieve all courses             |
+| POST   | /api/courses       | Create a new course              |
+| PUT    | /api/courses/:id   | Update a specific course         |
+| DELETE | /api/courses/:id   | Delete a course by ID            |
+
+## Categories
+
+| Method | Endpoint               | Description                         |
+|--------|------------------------|-------------------------------------|
+| GET    | /api/categories         | Retrieve all course categories      |
+| POST   | /api/categories         | Create a new course category        |
+| GET    | /api/categories/:id     | Retrieve a category by ID           |
+| PUT    | /api/categories/:id     | Update a category                   |
+| DELETE | /api/categories/:id     | Delete a category by ID             |
+
+# Models
+
+## Course Model
+
+| Field        | Type      | Description                                                         |
+|--------------|-----------|---------------------------------------------------------------------|
+| name         | String    | Name of the course                                                  |
+| about        | String    | Summary of the course                                               |
+| rating       | Number    | Rating of the course (1-5 stars)                                    |
+| instructor   | String    | Name of the course instructor                                       |
+| lastUpdated  | Date      | The date when the course was last updated                           |
+| language     | String    | Language used in the course (e.g., English)                         |
+| level        | Enum      | Difficulty level (Beginner, Mid, Advance)                           |
+| curriculum   | Array     | List of weekly contents for the course. Each week has content and a link |
+| resources    | Array     | Array of resource links                                             |
+| permission   | Boolean   | Indicates whether the course is accessible (true/false)             |
+| info         | String    | Additional information about the course                             |
+| category     | ObjectId  | Reference to the Category model                                     |
+
+## Category Model
+
+| Field       | Type      | Description                                       |
+|-------------|-----------|---------------------------------------------------|
+| name        | String    | Name of the category (e.g., New Courses)          |
+| description | String    | Description of the category                       |
+| courses     | Array     | List of courses under this category               |
+
+## User Model
+
+| Field             | Type    | Description                                        |
+|-------------------|---------|----------------------------------------------------|
+| name              | String  | Name of the user                                   |
+| email             | String  | Email of the user                                  |
+| takenCourses      | Array   | List of courses the user has completed             |
+| inProgressCourses | Array   | List of courses the user is currently taking       |
