@@ -59,8 +59,26 @@ To run this project, you will need to have the following installed:
    ```bash
    git clone https://github.com/yourusername/eduafri-api.git
    cd eduafri-api
+2. ```bash
+    npm run dev
+  
 
+# Set Up MongoDB
 
+Make sure MongoDB is running locally on your machine or configure it to use MongoDB Atlas. By default, the project connects to `mongodb://localhost:27017/eduafri`.
+
+## Environment Variables
+
+Create a `.env` file (optional) to configure any environment-specific variables such as the MongoDB connection string or port.
+
+## Usage
+
+### Running the Server
+
+Once the installation steps are complete, you can start the server by running:
+
+```bash
+npm start
 
 
 # API Endpoints
