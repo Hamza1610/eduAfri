@@ -3,7 +3,7 @@ const { config } = require('dotenv');
 
 config()
 // Connect to MongoDB
-module.exports =  connectToMongoDB = () => {
+module.exports =  function connectToMongoDB () {
     if (process.env.MONGODB_KEY) {
 
         mongoose.connect(process.env.MONGODB_KEY, {
